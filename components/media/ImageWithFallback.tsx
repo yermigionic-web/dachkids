@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { withBase } from "@/lib/basePath";
 
 type Props = {
   src: string;
@@ -13,7 +14,7 @@ export function ImageWithFallback({ src, alt, className, imgClassName, priority 
     <div className={cn("relative overflow-hidden", className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={withBase(src)}
         alt={alt}
         decoding={priority ? "sync" : "async"}
         fetchPriority={priority ? "high" : "auto"}

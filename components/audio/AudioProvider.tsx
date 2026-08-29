@@ -2,7 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 
-const BGM_SRC = "/assets/audio/main_bgm.mp3";
+import { withBase } from "@/lib/basePath";
+
+const BGM_SRC = withBase("/assets/audio/main_bgm.mp3");
 const MUTE_KEY = "dk-bgm-muted";
 const STARTED_KEY = "dk-bgm-started";
 const FADE_MS = 750;
