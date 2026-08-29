@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronLeft, Signal, Wifi, Battery } from "lucide-react";
 import type { Character } from "@/data/characters";
 import { phoneFlavorOf, type PhoneTheme } from "@/data/phones";
@@ -145,7 +145,7 @@ function AppChrome({
 }: {
   title: string;
   onBack: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="min-h-[520px] bg-[#f4f1ea] text-[#1c1916]">
@@ -187,7 +187,7 @@ function CalendarScreen({ character, onBack }: { character: Character; onBack: (
   return (
     <AppChrome title="오늘 일정" onBack={onBack}>
       <ul className="px-4 py-3">
-        {character.schedule.map((row) => (
+        {character.schedule?.map((row) => (
           <li key={row.time} className="grid grid-cols-[4rem_1fr] gap-3 border-b border-black/10 py-3 text-sm">
             <span className="font-mono text-[#9a3412]">{row.time}</span>
             <span>{row.label}</span>
@@ -209,7 +209,7 @@ function YuseongScreen({ character, onBack }: { character: Character; onBack: ()
               <span key={i} className={cn("block", i % 3 === 0 || i % 7 === 0 ? "bg-black" : "bg-neutral-300")} />
             ))}
           </div>
-          <p className="mt-3 text-center text-xs">{character.name} · {character.classIds.join(" / ")}</p>
+          <p className="mt-3 text-center text-xs">{character.name} · {(character.classIds ?? []).join(" / ")}</p>
         </div>
         <dl className="mt-4 grid grid-cols-2 gap-2 text-sm">
           <div className="rounded-lg bg-white p-3">

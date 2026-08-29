@@ -517,6 +517,8 @@ export function classmatesOf(classId: ClassId, exceptId?: string) {
 }
 
 export function classLabel(character: Character) {
-  const names = character.classIds.map((id) => ACADEMY_CLASSES[id].id).join(" · ");
-  return character.extraClassLabel ? `${names} + ${character.extraClassLabel}` : names;
+  const names = (character.classIds ?? [])
+    .map((id) => ACADEMY_CLASSES[id]?.id ?? id)
+    .join(" · ");
+  return character.extraClassLabel ? `${names} + ${character.extraClassLabel}` : names || "—";
 }

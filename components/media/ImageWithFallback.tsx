@@ -17,8 +17,8 @@ export function ImageWithFallback({ src, alt, className, imgClassName, priority 
         src={withBase(src)}
         alt={alt}
         decoding={priority ? "sync" : "async"}
-        fetchPriority={priority ? "high" : "auto"}
         className={cn("h-full w-full object-cover", imgClassName)}
+        suppressHydrationWarning
       />
     </div>
   );

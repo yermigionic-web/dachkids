@@ -27,6 +27,8 @@ export function CharacterRecord({ character }: { character: Character }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [drawer]);
 
+  if (!character?.id) return null;
+
   return (
     <main className="archive-tex min-h-dvh text-[#1e2a36]">
       <div className="relative z-[1] mx-auto max-w-5xl px-4 py-6 sm:px-6">
@@ -95,7 +97,7 @@ export function CharacterRecord({ character }: { character: Character }) {
         <div className="mt-4 grid gap-4 lg:grid-cols-3">
           <Block title="잘하는 것">
             <ul className="space-y-1 text-sm">
-              {character.strengths.map((s) => (
+              {character.strengths?.map((s) => (
                 <li key={s} className="border-b border-[#c5ced6] py-1">
                   {s}
                 </li>
@@ -104,7 +106,7 @@ export function CharacterRecord({ character }: { character: Character }) {
           </Block>
           <Block title="가방 안 · INVENTORY">
             <ul className="grid grid-cols-2 gap-1.5 text-[12px]">
-              {character.bag.map((item) => (
+              {character.bag?.map((item) => (
                 <li key={item} className="border border-dashed border-[#7d8b97] bg-[#f4f7f9] px-2 py-2">
                   {item}
                 </li>
@@ -113,7 +115,7 @@ export function CharacterRecord({ character }: { character: Character }) {
           </Block>
           <Block title="일정">
             <ul className="text-sm">
-              {character.schedule.map((row) => (
+              {character.schedule?.map((row) => (
                 <li key={row.time} className="grid grid-cols-[3.4rem_1fr] gap-2 border-b border-[#c5ced6] py-1.5">
                   <span className="font-mono text-[12px]">{row.time}</span>
                   <span>{row.label}</span>
@@ -126,9 +128,9 @@ export function CharacterRecord({ character }: { character: Character }) {
         <Block title="현재 교육" className="mt-4">
           <p>{character.education}</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {character.classIds.map((id) => (
+            {character.classIds?.map((id) => (
               <span key={id} className="border border-[#243040]/30 bg-white/70 px-2 py-1 font-mono text-[11px]">
-                {ACADEMY_CLASSES[id].id} · {ACADEMY_CLASSES[id].ko}
+                {ACADEMY_CLASSES[id]?.id ?? id} · {ACADEMY_CLASSES[id]?.ko ?? ""}
               </span>
             ))}
           </div>
@@ -194,7 +196,7 @@ export function CharacterRecord({ character }: { character: Character }) {
             )}
             {drawer === "timetable" && (
               <ul className="mt-3 text-sm">
-                {character.schedule.map((row) => (
+                {character.schedule?.map((row) => (
                   <li key={row.time} className="flex justify-between border-b border-[#c5ced6] py-2">
                     <span className="font-mono">{row.time}</span>
                     <span>{row.label}</span>
