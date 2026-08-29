@@ -15,14 +15,15 @@ const toneClass: Record<Tone, string> = {
 };
 
 export function AudioToggle({ tone = "home" }: { tone?: Tone }) {
-  const { muted, toggleMute } = useAudio();
+  const { muted, playing, toggleMute } = useAudio();
+  const silent = muted || !playing;
 
   return (
     <button
       type="button"
       onClick={toggleMute}
-      aria-label={muted ? "배경음 켜기" : "배경음 끄기"}
-      aria-pressed={muted}
+      aria-label={silent ? "배경음 켜기" : "배경음 끄기"}
+      aria-pressed={silent}
       className={cn(
         "inline-flex size-9 items-center justify-center rounded-full text-[13px] transition-transform duration-150",
         "hover:-translate-y-px active:scale-[0.96]",
@@ -30,7 +31,7 @@ export function AudioToggle({ tone = "home" }: { tone?: Tone }) {
         toneClass[tone],
       )}
     >
-      {muted ? <VolumeX size={15} strokeWidth={1.75} /> : <Volume2 size={15} strokeWidth={1.75} />}
+      {silent ? <VolumeX size={15} strokeWidth={1.75} /> : <Volume2 size={15} strokeWidth={1.75} />}
     </button>
   );
 }

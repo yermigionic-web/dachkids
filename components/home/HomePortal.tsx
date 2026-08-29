@@ -117,6 +117,7 @@ function MenuCard({
     <Link
       ref={cardRef}
       href={href}
+      onPointerDown={onOpen}
       onClick={onOpen}
       onMouseMove={onMove}
       onMouseLeave={reset}
