@@ -49,16 +49,10 @@ export function CharacterRecord({ character }: { character: Character }) {
             <section className="relative border-b border-[#8a96a3] lg:border-b-0 lg:border-r">
               <ImageWithFallback
                 src={character.image}
-                fileHint={character.image}
-                alt={`${character.name} 인물 사진 자리`}
-                label={character.name}
-                variant="character"
+                alt={character.name}
                 className="aspect-[3/4] w-full"
+                priority
               />
-              <div className="id-holo pointer-events-none absolute inset-0 opacity-40" />
-              <p className="border-t border-[#8a96a3] px-3 py-2 font-mono text-[10px] tracking-[0.16em] text-[#5b6773]">
-                {character.image.replace("/assets/characters/", "")}
-              </p>
             </section>
 
             <section className="p-4 sm:p-5">

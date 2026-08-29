@@ -82,13 +82,9 @@ function IdCard({ character, staff = false }: { character: Character; staff?: bo
         <div className="relative">
           <ImageWithFallback
             src={character.image}
-            fileHint={character.image}
-            alt={`${character.name} 사진 자리`}
-            label={character.name}
-            variant="character"
+            alt={character.name}
             className="aspect-[3/4] border border-[#7d8b97]"
           />
-          <span className="id-holo pointer-events-none absolute inset-0" />
         </div>
         <div className="min-w-0">
           <h3 className="truncate text-lg font-medium">{character.name}</h3>

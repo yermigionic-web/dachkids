@@ -35,7 +35,6 @@ export function WorldGuide() {
               <Section02 />
               <CatSlot
                 src={WORLD_ASSETS.catTest}
-                file="world-cat-test.png"
                 caption="이게 맞아?"
                 label="검사표 고양이"
               />
@@ -46,14 +45,12 @@ export function WorldGuide() {
               <Section05 />
               <CatSlot
                 src={WORLD_ASSETS.catSchedule}
-                file="world-cat-schedule.png"
                 caption="살려주세요ㅠ"
                 label="시간표 고양이"
               />
               <Section06 />
               <CatSlot
                 src={WORLD_ASSETS.catMoney}
-                file="world-cat-money.png"
                 caption="카드값은 확정"
                 label="계산 고양이"
               />
@@ -67,7 +64,6 @@ export function WorldGuide() {
             <Section09 />
             <CatSlot
               src={WORLD_ASSETS.catCommute}
-              file="world-cat-commute.png"
               caption="막차 계산 중"
               label="통학 고양이"
             />
@@ -121,10 +117,7 @@ function Masthead() {
         <div className="max-w-[160px]">
           <ImageWithFallback
             src={WORLD_ASSETS.catBoard}
-            fileHint="world-cat-board.png"
-            alt="단톡 고양이 밈 자리"
-            label="단톡 고양이"
-            variant="world"
+            alt="단톡을 보는 고양이"
             className="tilt-sticker aspect-square"
           />
         </div>
@@ -451,12 +444,10 @@ function Section09() {
 
 function CatSlot({
   src,
-  file,
   caption,
   label,
 }: {
   src: string;
-  file: string;
   caption: string;
   label: string;
 }) {
@@ -465,10 +456,7 @@ function CatSlot({
       <div className="tilt-sticker mx-auto max-w-[240px] border-2 border-black bg-white p-2">
         <ImageWithFallback
           src={src}
-          fileHint={file}
-          alt={`${label} 자리`}
-          label={label}
-          variant="world"
+          alt={label}
           className="aspect-square"
         />
       </div>

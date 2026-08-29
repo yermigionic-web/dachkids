@@ -114,12 +114,10 @@ export function MapView() {
             >
               <ImageWithFallback
                 src={SEOUL_MAP_IMAGE}
-                fileHint="seoul-map-base.png"
-                alt="서울 생활권 지도 배경"
-                label="서울 지도 배경"
-                variant="map"
+                alt="서울 생활권 지도"
                 className="h-full w-full"
-                imgClassName="object-cover opacity-80"
+                imgClassName="object-cover opacity-90"
+                priority
               />
               <SeoulSvg route={route} longRoute={(commuter?.commuteMinutes ?? 0) >= 60 && tab === "commute"} />
               {LOCATIONS.map((loc) => {
