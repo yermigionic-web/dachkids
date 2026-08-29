@@ -6,6 +6,7 @@ import { AudioToggle } from "@/components/audio/AudioToggle";
 import { BackLink } from "@/components/chrome/BackLink";
 import { Wordmark } from "@/components/chrome/Wordmark";
 import { ClassCrest } from "@/components/placement/ClassCrest";
+import { YSigil } from "@/components/placement/YSigil";
 import { classmatesOf } from "@/data/characters";
 import { ACADEMY_CLASSES, type ClassId } from "@/data/classes";
 import {
@@ -151,11 +152,8 @@ function Intro({
   onSaved: () => void;
 }) {
   return (
-    <section className="relative mt-10 overflow-hidden border border-[#e8c872]/35 bg-[#14110c]/70 px-5 py-10 text-center sm:px-8">
-      <div className="mx-auto mb-6 grid size-28 place-items-center">
-        <span className="sort-ring absolute size-28 rounded-full border border-dashed border-[#e8c872]/50" />
-        <span className="font-serif text-3xl text-[#e8c872]">YS</span>
-      </div>
+    <section className="relative mt-10 border border-[#e8c872]/35 bg-[#14110c]/70 px-5 py-10 text-center sm:px-8">
+      <YSigil />
       <p className="text-[11px] tracking-[0.38em] text-[#e8c872]">YUSEONG SORTING</p>
       <h1 className="mt-4 font-serif text-[32px] leading-tight text-[#f8f1d4] sm:text-[42px]">수강반이 당신을 고른다</h1>
       <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#cbb99a]">

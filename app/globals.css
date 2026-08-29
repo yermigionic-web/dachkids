@@ -318,6 +318,20 @@ a {
   animation: ink-ring 36s linear infinite;
 }
 
+@keyframes sigil-hover {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.sort-sigil-hover {
+  animation: sigil-hover 4.4s ease-in-out infinite;
+}
+
 .reveal-crest {
   animation: reveal-crest 700ms ease-out;
 }
@@ -337,6 +351,7 @@ a {
   .sort-ring,
   .sort-ring-rev,
   .sort-crest-spin,
+  .sort-sigil-hover,
   .reveal-crest {
     animation: none !important;
     transition: none !important;
