@@ -51,7 +51,7 @@ export function WorldGuide() {
               <Section06 />
               <CatSlot
                 src={WORLD_ASSETS.catMoney}
-                caption="카드값은 확정"
+                caption="대치동 물가 뭐임?"
                 label="계산 고양이"
               />
             </div>
@@ -71,7 +71,7 @@ export function WorldGuide() {
           <footer className="flex flex-col gap-3 border-t-[3px] border-black bg-[#c23b2a] px-4 py-4 text-[#f6f0e4] sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-[11px] tracking-[0.18em]">대치헌터키즈 ☆ 2040 학생용 정보지 ver. 1.0</p>
-              <p className="mt-1 text-sm">복사·공유 OK · S급 보장 안 함 · 학교 먼저</p>
+              <p className="mt-1 text-sm">복사·공유 OK · 대치키즈들 오늘도 밤 새워보쟈</p>
             </div>
             <Link
               href="/"
@@ -101,16 +101,14 @@ function Masthead() {
         </ul>
       </div>
       <p className="mt-3 rotate-[-1deg] font-serif text-[15px] text-[#c23b2a] sm:text-[18px]">
-        ☆ 와! 대치동 크래커보다 싸다! ☆ <span className="text-black">← 거짓말</span>
+        ☆ 와! 대치동 크래커보다 싸다! ☆
       </p>
-      <h1 className="mt-2 font-serif text-[34px] leading-[0.95] sm:text-[56px]">
-        각성은 랜덤.
-        <br />
-        시간표는 확정.
+      <h1 className="mt-2 font-serif text-[34px] leading-[0.95] sm:text-[48px]">
+        각성한다고 자퇴는 어림도 없지
       </h1>
       <p className="mt-3 max-w-xl text-[14px] leading-relaxed">
         대치동 학생들이 단톡에 돌리는 헌터 사교육 정보지.
-        이 페이지가 그 찌라시다. 캡처본을 붙이지 않는다.
+        캡처하지 말고 본인만 볼 것!
       </p>
       <div className="mt-4 grid items-end gap-3 sm:grid-cols-[1fr_160px]">
         <LifeIcons />
@@ -173,7 +171,7 @@ function Section01() {
         <span className="hl">수행평가는 아직도 있다.</span>
       </p>
       <p className="mt-3 text-sm leading-relaxed">
-        학생은 학생이다. 학교, 수행평가, 내신, 수능, 통학이 그대로 존재한다.
+        학생은 학생. 딘딘은 딘딘. 학교, 수행평가, 내신, 수능, 통학은 계속하셔야 됩니다.
       </p>
       <ul className="mt-3 grid grid-cols-2 gap-1 text-[12px] sm:grid-cols-5">
         {["학교", "자습", "유성", "숙제", "복습"].map((item) => (
@@ -289,9 +287,7 @@ function Section05() {
         </tbody>
       </table>
       <p className="mt-3 font-serif text-base leading-snug">
-        각성 여부와 관계없이
-        <br />
-        내일 1교시는 온다.
+        각성했다고 자퇴하면 멍청이 인증
       </p>
     </Box>
   );
@@ -313,7 +309,7 @@ function Section06() {
         </ul>
         <p className="mt-3 border-t border-dotted border-black pt-2 text-base">TOTAL ₩ ______</p>
       </div>
-      <p className="mt-3 text-center font-serif">가능성은 모르겠고 카드값은 확정.</p>
+      <p className="mt-3 text-center font-serif">가능성이 낮으셔도 결제하셔야 됩니다 학생~</p>
     </Box>
   );
 }
@@ -346,8 +342,8 @@ function Section07() {
 
 function Section08() {
   return (
-    <Box num="08" title="커뮤니티는 이미 난리">
-      <p className="mb-3 font-serif">본인도 모르는데 왜 커뮤엔 예상등급이 있음</p>
+    <Box num="08" title="더 많은 커뮤, 더 많은 도파민">
+      <p className="mb-3 font-serif">?? 내가 모르는 내 예상등급이 왜여기에</p>
       <div className="grid gap-2 sm:grid-cols-2">
         <BoardMock
           title="DACHITA"
@@ -423,7 +419,7 @@ function SnsGridMock() {
 function Section09() {
   return (
     <Box num="09" title="모의던전">
-      <p className="font-serif text-lg">중단 판단도 평가다. 관절은 재시험이 안 된다.</p>
+      <p className="font-serif text-lg">빨간불에는 멈출 줄 알아야 모범운전자, 그리고 모범생</p>
       <svg viewBox="0 0 360 180" className="mt-3 w-full border-2 border-black bg-[#e4dcc8]" role="img" aria-label="모의던전 평면도">
         <rect x="16" y="16" width="70" height="28" fill="#fff" stroke="#141414" />
         <text x="51" y="34" textAnchor="middle" fontSize="10">START</text>

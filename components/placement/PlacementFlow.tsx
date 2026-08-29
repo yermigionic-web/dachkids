@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AudioToggle } from "@/components/audio/AudioToggle";
 import { BackLink } from "@/components/chrome/BackLink";
 import { Wordmark } from "@/components/chrome/Wordmark";
+import { ClassCrest } from "@/components/placement/ClassCrest";
 import { classmatesOf } from "@/data/characters";
 import { ACADEMY_CLASSES, type ClassId } from "@/data/classes";
 import {
@@ -158,8 +159,7 @@ function Intro({
       <p className="text-[11px] tracking-[0.38em] text-[#e8c872]">YUSEONG SORTING</p>
       <h1 className="mt-4 font-serif text-[32px] leading-tight text-[#f8f1d4] sm:text-[42px]">수강반이 당신을 고른다</h1>
       <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#cbb99a]">
-        성격 기숙사가 아니다. 일정, 목표, 현재 상태를 읽는 사전상담.
-        다만 결과는 조금 극적으로 내려온다.
+        MBTI 같은 게 아니랍니다. 유성에 들어왔거나 들어오려 하는 바로 너! 당신의 일정과 목표, 현재 상태를 입력하여 상담을 끝내고 반에 배정됩시다.
       </p>
       <p className="mt-5 text-[12px] tracking-widest text-[#e8c872]/70">예상 소요 3분</p>
       <ul className="mt-6 space-y-1 text-[12px] text-[#a89478]">
@@ -178,7 +178,11 @@ function Intro({
           지난 결과 보기 · {ACADEMY_CLASSES[saved.result].id}
         </button>
       )}
-      <p className="mt-6 text-center text-[12px] text-[#8a7a62]">그럼 뭘 보장함 · 시간표와 주의사항 정도</p>
+      <p className="mt-6 text-center text-[12px] leading-relaxed text-[#8a7a62]">
+        Q. 그럼 보장하는 게 뭐임??
+        <br />
+        A. 시간표랑 주의사항만 알면 되지 ㅋㅋ
+      </p>
     </section>
   );
 }
@@ -254,7 +258,7 @@ function ResultCard({
         color: "#f8f1d4",
       }}
     >
-      <span className="sort-ring mx-auto mb-4 block size-28 rounded-full border border-dashed opacity-70" style={{ borderColor: klass.sort.gold }} />
+      <ClassCrest classId={klass.id} colors={klass.sort} />
       <p className="text-[11px] tracking-[0.38em]" style={{ color: klass.sort.gold }}>THE SORTING IS COMPLETE</p>
       <h1 className="mt-3 font-mono text-[13px] tracking-[0.32em]">{klass.id}</h1>
       <p className="mt-2 font-serif text-[48px] leading-none">{klass.ko}</p>
@@ -272,7 +276,11 @@ function ResultCard({
         </div>
         <div className="border border-white/15 bg-black/20 p-4">
           <p className="text-[11px] tracking-[0.16em] opacity-70">주의</p>
-          <p className="mt-2 text-sm leading-relaxed">{klass.caution}</p>
+          <ul className="mt-2 space-y-1 text-sm">
+            {klass.caution.map((item) => (
+              <li key={item}>· {item}</li>
+            ))}
+          </ul>
         </div>
       </div>
 

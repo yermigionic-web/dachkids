@@ -41,5 +41,5 @@ export const WORLD_COMMUNITY = [
   { board: "학부모카페", text: "유성 반 이름 보고 등급 가나요?", meta: "댓글 89" },
   { board: "팬덤", text: "오늘 별관 실기 클립", meta: "조회 1.2만" },
   { board: "검색", text: "각성률 5% 실화냐", meta: "연관 질문" },
-  { board: "단톡", text: "본인도 모르는데 예상등급 올림", meta: "읽음 28" },
+  { board: "단톡", text: "ㅁㅊ 우리 리포트유출된거아ㅣ야????", meta: "읽음 28" },
 ] as const;

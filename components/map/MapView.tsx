@@ -161,7 +161,7 @@ export function MapView() {
 
         <aside className="z-20 w-full border-t border-[#c5d0d8] bg-white/95 lg:w-[380px] lg:border-l lg:border-t-0">
           <p className="border-b border-[#d5e0e6] px-5 py-3 text-[11px] tracking-[0.2em] text-[#5a7384]">
-            {tab === "schools" ? "SCHOOL CLUSTER" : tab === "academy" ? "YUSEONG CAMPUS" : "COMMUTE PATH"}
+            {tab === "schools" ? "학교 안내" : tab === "academy" ? "유성헌터교육원 - 대치본원 방문" : "통학 안내"}
           </p>
           <LocationSheet location={selected} />
         </aside>
@@ -226,13 +226,10 @@ function LocationSheet({ location }: { location: MapLocation }) {
 
   return (
     <div className="flex h-full flex-col p-5">
-      <p className="text-[11px] tracking-[0.2em] text-[#5a7384]">
-        {location.kind === "school" ? "SCHOOL" : location.kind === "academy" ? "ACADEMY" : "TRAINING"}
-      </p>
-      <h2 className="mt-1 text-2xl font-medium leading-tight">{location.name}</h2>
+      <h2 className="text-2xl font-medium leading-tight">{location.name}</h2>
+      <p className="mt-1 text-sm text-[#16324a]">{location.blurb}</p>
       <p className="mt-1 text-sm text-[#4d6c7e]">{location.district}</p>
-      <p className="mt-3 text-sm leading-relaxed">{location.blurb}</p>
-      <p className="mt-2 text-sm leading-relaxed text-[#3d5666]">{location.detail}</p>
+      <p className="mt-3 text-sm leading-relaxed text-[#3d5666]">{location.detail}</p>
       {location.commuteToHqMin ? (
         <p className="mt-3 rounded-lg bg-[#eef5f8] px-3 py-2 text-sm">
           대치본원까지 약 {location.commuteToHqMin}분

@@ -82,7 +82,6 @@ export const PLACEMENT_QUESTIONS: PlacementQuestion[] = [
   {
     id: "safety",
     text: "모의던전에서 안전절차 때문에 고득점을 포기해야 한다면?",
-    hint: "정답 없음. 중단 판단도 평가다.",
     options: [
       { id: "a", label: "안전정지를 누른다", scores: { ZENITH: 2, VECTOR: 1 } },
       { id: "b", label: "팀 상황을 더 확인한다", scores: { VECTOR: 2 } },
@@ -105,7 +104,7 @@ export const PLACEMENT_QUESTIONS: PlacementQuestion[] = [
     text: "집 또는 학교에서 대치동까지는?",
     options: [
       { id: "a", label: "도보 · 20분 안쪽", scores: { ZENITH: 2, VECTOR: 1 } },
-      { id: "b", label: "지하철 한 번", scores: { AXIS: 1, VECTOR: 1 } },
+      { id: "b", label: "지하철 한 번 타면 옴, 30분 안쪽", scores: { AXIS: 1, VECTOR: 1 } },
       { id: "c", label: "환승 포함 40분+", scores: { AXIS: 1, ORBIT: 2 } },
       { id: "d", label: "한강 너머, 한 시간 이상", scores: { ORBIT: 4 } },
     ],
@@ -118,7 +117,7 @@ export const PLACEMENT_QUESTIONS: PlacementQuestion[] = [
       { id: "b", label: "실기 기준점", scores: { VECTOR: 2 } },
       { id: "c", label: "학업과 수강의 균형", scores: { AXIS: 3 } },
       { id: "d", label: "능력의 사용 범위", scores: { NOVA: 2, ZENITH: 1 } },
-      { id: "e", label: "아직 모름. 과잉 확정 싫음", scores: { ZENITH: 2, AXIS: 1 } },
+      { id: "e", label: "내 미래를 확정해 두고 달리기 싫어!", scores: { ZENITH: 2, AXIS: 1 } },
     ],
   },
 ];

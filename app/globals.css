@@ -307,7 +307,15 @@ a {
 }
 
 .sort-ring {
-  animation: ink-ring 22s linear infinite;
+  animation: ink-ring 16s linear infinite;
+}
+
+.sort-ring-rev {
+  animation: ink-ring 22s linear infinite reverse;
+}
+
+.sort-crest-spin {
+  animation: ink-ring 36s linear infinite;
 }
 
 .reveal-crest {
@@ -327,6 +335,8 @@ a {
   .home-card,
   .sort-glow,
   .sort-ring,
+  .sort-ring-rev,
+  .sort-crest-spin,
   .reveal-crest {
     animation: none !important;
     transition: none !important;
